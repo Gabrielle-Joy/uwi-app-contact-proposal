@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Contact
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-searchbar [(ngModel)]="searchTerm" [formControl]="searchControl"></ion-searchbar>
+  
+  <div *ngIf="searching" class="spinner-container">
+    <ion-spinner></ion-spinner>
+  </div>
+
+  <ion-card>
+      <ion-item *ngFor="let item of items">
+          <ion-icon name="school" item-start large></ion-icon>
+          <h2 text-wrap>{{item.title}}</h2>
+          <p>tel: {{item.number}}</p>
+          <p>ext. {{item.ext}}</p>
+        </ion-item>
+  </ion-card>
+
+</ion-content>
